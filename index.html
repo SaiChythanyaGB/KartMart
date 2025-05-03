@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KartMart - Webpage Design</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js" defer></script>
+
+    <script>
+        function validateLogin() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+    
+            if (email === "" || password === "") {
+                alert("Please enter both email and password.");
+                return false;
+            }
+    
+            if (email === "gat@gat" && password === "123") {
+                window.location.href = "homepage.html";
+            } else {
+                alert("Invalid email or password.");
+            }
+    
+            return false;
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">KartMart</h2>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="text-section">
+                <h1 class="text-section-text">Wearables <br><span>Accessories</span>  <br>Shoes</h1>
+                <p class="par">Discover the latest in fashion and comfort. Exclusive deals available now!</p>
+                <a href="#" class="cn">Contact Us</a>
+            </div>
+
+            <div class="form">
+                <h2 class="login-here">Login Here</h2>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email Here" required>
+                <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
+
+                <button class="btnn" onclick="return validateLogin()">Login</button>
+
+                <p class="link">Don't have an account?<br>
+                <a href="#">Sign up here</a></p>
+
+                <p class="liw">Log in with</p>
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
