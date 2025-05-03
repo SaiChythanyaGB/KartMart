@@ -42,6 +42,25 @@
     .buy-btn:hover {
       background: #008c9e;
     }
+
+    .quantity-label {
+      font-weight: 500;
+      margin-top: 15px;
+    }
+
+    input[type="number"] {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      width: 80px;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .product-img {
+        max-height: 300px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -57,11 +76,28 @@
         <p class="text-muted">Bluetooth Calling | 1.85” Display | For Women</p>
         <h4 class="text-success">₹2,499 <del class="text-muted fs-6">₹4,999</del></h4>
         <p>This smartwatch is a perfect companion for your daily needs, offering a bright display, seamless connectivity, and a stylish look. Comes with health tracking, weather updates, and long battery life.</p>
-        <button class="buy-btn mt-3">Buy Now</button>
+        <label class="quantity-label">Quantity:
+            <input type="number" id="quantity" min="1" value="1">
+          </label>
+  
+          <button class="buy-btn mt-3" onclick="handleBuyNow()">Buy Now</button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+    function handleBuyNow() {
+      const qty = document.getElementById('quantity').value;
+      if (qty < 1) {
+        alert('Please enter a valid quantity.');
+        return;
+      }
+      alert(`You selected ${qty} product${qty > 1 ? 's' : ''}. Proceeding to checkout...`);
+      // You could redirect or update a cart here
+      // window.location.href = "checkout.html";
+    }
+  </script>
 
 </body>
 </html>
